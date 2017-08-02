@@ -1,0 +1,13 @@
+<md-card>
+  <md-card-content>
+    <img [src]="sanitizer.bypassSecurityTrustUrl(cat.picture)"/>
+  </md-card-content>
+  <md-card-header>
+    <md-card-title>{{cat.name}}</md-card-title>
+    <md-card-subtitle>{{cat.birthDate | date: 'dd/MM/yyyy'}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-footer fxLayout="row" fxLayoutAlign="flex-end">
+    <button md-button ng-click="detailCat()">Details</button>
+    <button md-button ng-click="removeCat()">Verwijder</button>
+  </md-card-footer>
+</md-card>

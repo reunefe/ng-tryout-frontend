@@ -1,0 +1,12 @@
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$tryout-app-primary: mat-palette($mat-indigo);
+$tryout-app-accent: mat-palette($mat-pink);
+
+$tryout-app-warn: mat-palette($mat-red);
+
+$tryout-app-theme: mat-light-theme($tryout-app-primary, $tryout-app-accent, $tryout-app-warn);
+
+@include angular-material-theme($tryout-app-theme);
