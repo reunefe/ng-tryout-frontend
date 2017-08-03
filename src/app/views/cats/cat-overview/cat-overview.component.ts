@@ -9,6 +9,7 @@ import { Cat } from '../../../models/cat.model';
 })
 export class CatOverviewComponent implements OnInit {
   catList: Cat[];
+  gettingCats: boolean;
 
   constructor(private catService: CatService) {
   }
@@ -18,8 +19,12 @@ export class CatOverviewComponent implements OnInit {
   }
 
   getCats(): void {
+    this.gettingCats = !this.catList || this.catList.length === 0;
     this.catService.getCats()
-      .subscribe(data => this.catList = data);
+      .subscribe(data => {
+        this.gettingCats = false;
+        this.catList = data;
+      });
   }
 
 }

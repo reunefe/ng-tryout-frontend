@@ -22,6 +22,10 @@ export class CatService {
       .catch(this.onError);
   };
 
+  deleteCat(catId: string) {
+    return this.http.delete(BASE_URI + catId);
+  };
+
   /*getCat(catId: string): Observable<Cat[]> {
     return this.http.get(`${BASE_URI}${catId}`)
       .map(res => res.data.data)

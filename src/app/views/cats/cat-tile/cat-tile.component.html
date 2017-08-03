@@ -6,8 +6,8 @@
     <md-card-title>{{cat.name}}</md-card-title>
     <md-card-subtitle>{{cat.birthDate | date: 'dd/MM/yyyy'}}</md-card-subtitle>
   </md-card-header>
-  <md-card-footer fxLayout="row" fxLayoutAlign="flex-end">
-    <button md-button ng-click="detailCat()">Details</button>
-    <button md-button ng-click="removeCat()">Remove</button>
+  <md-card-footer fxLayoutAlign="flex-end">
+    <button md-button (click)="detailCat()">Details</button>
+    <button md-button (click)="removeCat()" [disabled]="deleting">Remove</button>
   </md-card-footer>
 </md-card>

@@ -16,7 +16,7 @@ export class NagivationService {
       this.tabs = [
         new Tab('Cats', 'cats'),
         new Tab('Owners', 'owners'),
-        new Tab('Reservations', 'reservations ')
+        new Tab('Reservations', 'reservations')
       ];
     }
 

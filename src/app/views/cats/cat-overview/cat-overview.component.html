@@ -1,5 +1,11 @@
-<div fxLayout="row" fxLayoutWrap fxLayoutGap="30px" fxLayoutAlign="center">
+<div fxLayout="row" fxLayoutWrap fxLayoutAlign="center">
   <app-cat-tile *ngFor="let cat of catList;"
-                [cat]="cat">
+                [cat]="cat"
+                (onDelete)="getCats()"
+                [hidden]="gettingCats">
   </app-cat-tile>
+  <p *ngIf="!catList || catList.length === 0"
+     [hidden]="gettingCats">No cats registered.</p>
+
+  <md-spinner *ngIf="gettingCats" mode="indeterminate"></md-spinner>
 </div>

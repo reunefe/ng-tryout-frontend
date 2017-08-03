@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Cat } from '../../../models/cat.model';
+import { CatService } from '../../../services/cat.service';
 
 @Component({
   selector: 'app-cat-tile',
@@ -10,11 +11,22 @@ import { Cat } from '../../../models/cat.model';
 })
 export class CatTileComponent implements OnInit {
   @Input() cat: Cat;
+  @Output() onDelete: EventEmitter<any> = new EventEmitter();
+  deleting: boolean;
 
-  constructor(public sanitizer: DomSanitizer) {
+  constructor(public sanitizer: DomSanitizer, private catService: CatService) {
   }
 
   ngOnInit() {
+  }
+
+  removeCat(): void {
+    this.deleting = true;
+    this.catService.deleteCat(this.cat.id)
+      .subscribe(() => {
+        this.deleting = false;
+        this.onDelete.emit();
+      });
   }
 
 }

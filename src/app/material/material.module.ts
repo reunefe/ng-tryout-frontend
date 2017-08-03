@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import {
   MdButtonModule,
   MdCardModule,
+  MdIconModule,
+  MdMenuModule,
   MdProgressSpinnerModule,
   MdTabsModule,
   MdToolbarModule
@@ -16,6 +18,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MdCardModule,
     MdButtonModule,
     MdTabsModule,
+    MdMenuModule,
+    MdIconModule,
     MdToolbarModule,
     MdProgressSpinnerModule
   ],
@@ -24,6 +28,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MdCardModule,
     MdButtonModule,
     MdTabsModule,
+    MdMenuModule,
+    MdIconModule,
     MdToolbarModule,
     MdProgressSpinnerModule
   ],
