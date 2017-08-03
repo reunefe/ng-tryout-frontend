@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CatService } from '../../services/cat.service';
-import { Cat } from '../../models/cat.model';
+import { CatService } from '../../../services/cat.service';
+import { Cat } from '../../../models/cat.model';
 
 @Component({
   selector: 'app-cat-overview',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Cat } from '../../models/cat.model';
+import { Cat } from '../../../models/cat.model';
 
 @Component({
   selector: 'app-cat-tile',

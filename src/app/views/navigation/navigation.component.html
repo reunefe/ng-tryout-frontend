@@ -1,0 +1,10 @@
+<md-toolbar color="primary">
+  <nav md-tab-nav-bar>
+    <a md-tab-link
+       *ngFor="let link of tabs"
+       routerLinkActive="active"
+       [routerLink]="link.path">
+      {{link.label}}
+    </a>
+  </nav>
+</md-toolbar>
