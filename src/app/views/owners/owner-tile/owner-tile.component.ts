@@ -12,12 +12,18 @@ import { OwnerService } from '../../../services/owner.service';
 export class OwnerTileComponent implements OnInit {
   @Input() owner: Owner;
   @Output() onDelete: EventEmitter<any> = new EventEmitter();
+  avatar: any;
   deleting: boolean;
 
   constructor(public sanitizer: DomSanitizer, private ownerService: OwnerService) {
   }
 
   ngOnInit() {
+    if (this.owner.picture) {
+      this.avatar = this.sanitizer.bypassSecurityTrustUrl(this.owner.picture);
+    } else {
+      this.avatar = '../../../assets/NoPicture.png';
+    }
   }
 
   removeOwner(): void {

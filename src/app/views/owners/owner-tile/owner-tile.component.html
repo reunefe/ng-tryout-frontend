@@ -1,6 +1,6 @@
 <md-card>
   <md-card-header>
-    <img md-card-avatar [src]="sanitizer.bypassSecurityTrustUrl(owner.picture)" *ngIf="owner.picture">
+    <img md-card-avatar [src]="avatar">
     <md-card-title>{{owner.lastName+', '+owner.firstName}}</md-card-title>
     <md-card-subtitle>{{owner.email}}</md-card-subtitle>
     <md-card-subtitle>{{owner.phoneNr}}</md-card-subtitle>
