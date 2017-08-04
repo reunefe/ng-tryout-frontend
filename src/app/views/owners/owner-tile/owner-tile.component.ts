@@ -22,7 +22,7 @@ export class OwnerTileComponent implements OnInit {
     if (this.owner.picture) {
       this.avatar = this.sanitizer.bypassSecurityTrustUrl(this.owner.picture);
     } else {
-      this.avatar = '../../../assets/NoPicture.png';
+      this.avatar = '../../../assets/NoAvatar.jpg';
     }
   }
 
