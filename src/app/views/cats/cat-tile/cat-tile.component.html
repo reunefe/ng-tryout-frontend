@@ -1,6 +1,6 @@
 <md-card>
   <md-card-content>
-    <img [src]="sanitizer.bypassSecurityTrustUrl(cat.picture)"/>
+    <img [src]="sanitizer.bypassSecurityTrustUrl(cat.picture)" *ngIf="cat.picture"/>
   </md-card-content>
   <md-card-header>
     <md-card-title>{{cat.name}}</md-card-title>

@@ -23,7 +23,10 @@ export class CatService {
   };
 
   deleteCat(catId: string) {
-    return this.http.delete(BASE_URI + catId);
+    return this.http.delete(BASE_URI + catId)
+      .map(res => res.json())
+      .map(res => res.data)
+      .catch(this.onError);
   };
 
   /*getCat(catId: string): Observable<Cat[]> {
@@ -68,22 +71,6 @@ export class CatService {
         cat.foto
       );
     });
-  }
-
-  parseCat(data: any): Cat {
-    return new Cat(
-      data.naam,
-      new Date(data.geboortedatum),
-      data.geslacht,
-      data._id,
-      data.gecastreerd,
-      data.medicatie,
-      data.dierenarts,
-      data.eigenaar,
-      data.voeding,
-      data.gedrag,
-      data.foto
-    );
   }
 
   onError(res: Response): Observable<any> {

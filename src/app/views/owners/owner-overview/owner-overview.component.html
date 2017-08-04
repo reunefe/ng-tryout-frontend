@@ -1,3 +1,11 @@
-<p>
-  owner-overview works!
-</p>
+<div fxLayout="row" fxLayoutWrap fxLayoutAlign="center">
+  <app-owner-tile *ngFor="let owner of ownerList;"
+                [owner]="owner"
+                (onDelete)="getOwners()"
+                [hidden]="loading">
+  </app-owner-tile>
+  <p *ngIf="!ownerList || ownerList.length === 0"
+     [hidden]="loading">No owners registered.</p>
+
+  <md-spinner *ngIf="loading" mode="indeterminate"></md-spinner>
+</div>

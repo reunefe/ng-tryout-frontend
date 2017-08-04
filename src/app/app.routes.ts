@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 
 export const appRoutes: Routes = [
   {path: 'cats', component: CatOverviewComponent},
-  //{path: 'owners', component: OwnerOverviewComponent},
+  {path: 'owners', component: OwnerOverviewComponent},
   {path: '**', component: PageNotFoundComponent},
   {path: '', redirectTo: '/cats', pathMatch: 'full'}
 ];

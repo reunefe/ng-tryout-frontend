@@ -19,6 +19,8 @@ import { NagivationService } from './services/nagivation.service';
 import { CatService } from './services/cat.service';
 import { OwnerOverviewComponent } from './views/owners/owner-overview/owner-overview.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { OwnerService } from './services/owner.service';
+import { OwnerTileComponent } from './views/owners/owner-tile/owner-tile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
     CatOverviewComponent,
     NavigationComponent,
     OwnerOverviewComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OwnerTileComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
     RouterModule.forRoot(appRoutes),
     MaterialModule
   ],
-  providers: [NagivationService, CatService],
+  providers: [NagivationService, CatService, OwnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

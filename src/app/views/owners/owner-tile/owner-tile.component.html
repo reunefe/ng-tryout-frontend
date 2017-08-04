@@ -1,0 +1,11 @@
+<md-card>
+  <md-card-header>
+    <img md-card-avatar [src]="sanitizer.bypassSecurityTrustUrl(owner.picture)" *ngIf="owner.picture">
+    <md-card-title>{{owner.lastName+', '+owner.firstName}}</md-card-title>
+    <md-card-subtitle>{{owner.email}}</md-card-subtitle>
+    <md-card-subtitle>{{owner.phoneNr}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-footer fxLayoutAlign="flex-end">
+    <button md-button (click)="removeOwner()" [disabled]="deleting">Remove</button>
+  </md-card-footer>
+</md-card>
