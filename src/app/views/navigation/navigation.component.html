@@ -11,7 +11,7 @@
     <md-icon>more_vert</md-icon>
   </button>
   <md-menu #menu="mdMenu">
-    <button md-menu-item>
+    <button md-menu-item (click)="createNew()">
       <md-icon>add</md-icon>
       <span>New</span>
     </button>

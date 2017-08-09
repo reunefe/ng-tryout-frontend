@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { Tab } from '../models/tab.model';
+import { OwnerRegistrationComponent } from '../views/owners/owner-registration/owner-registration.component';
 
 @Injectable()
-export class NagivationService {
+export class NavigationService {
   tabs: Tab[];
 
   constructor() {
@@ -15,7 +16,7 @@ export class NagivationService {
     if (!this.tabs) {
       this.tabs = [
         new Tab('Cats', 'cats'),
-        new Tab('Owners', 'owners'),
+        new Tab('Owners', 'owners', OwnerRegistrationComponent),
         new Tab('Reservations', 'reservations')
       ];
     }

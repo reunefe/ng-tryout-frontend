@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import {
   MdButtonModule,
   MdCardModule,
+  MdDialogModule,
   MdIconModule,
+  MdInputModule,
   MdMenuModule,
   MdProgressSpinnerModule,
   MdTabsModule,
@@ -15,23 +17,27 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MdCardModule,
     MdButtonModule,
-    MdTabsModule,
-    MdMenuModule,
+    MdCardModule,
+    MdDialogModule,
     MdIconModule,
-    MdToolbarModule,
-    MdProgressSpinnerModule
+    MdInputModule,
+    MdMenuModule,
+    MdProgressSpinnerModule,
+    MdTabsModule,
+    MdToolbarModule
   ],
   exports: [
     FlexLayoutModule,
-    MdCardModule,
     MdButtonModule,
-    MdTabsModule,
-    MdMenuModule,
+    MdCardModule,
+    MdDialogModule,
     MdIconModule,
-    MdToolbarModule,
-    MdProgressSpinnerModule
+    MdInputModule,
+    MdMenuModule,
+    MdProgressSpinnerModule,
+    MdTabsModule,
+    MdToolbarModule
   ],
   declarations: []
 })

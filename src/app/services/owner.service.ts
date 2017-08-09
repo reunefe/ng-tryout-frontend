@@ -24,6 +24,12 @@ export class OwnerService {
       .catch(this.onError);
   }
 
+  createOwner(owner: Owner, photo?: any): Observable<Owner> {
+    return this.http.post(BASE_URI, owner, photo).map(res => res.json())
+      .map(res => res.data)
+      .catch(this.onError);
+  };
+
   deleteOwner(ownerId: string): Observable<Owner> {
     return this.http.delete(BASE_URI + ownerId)
       .map(res => res.json())
@@ -39,10 +45,10 @@ export class OwnerService {
         owner.telefoonnummer,
         owner._id,
         new Address(
-          owner.adres.straat,
-          owner.adres.nummer,
-          owner.adres.postcode,
-          owner.adres.gemeente
+          owner.adres && owner.adres.straat,
+          owner.adres && owner.adres.nummer,
+          owner.adres && owner.adres.postcode,
+          owner.adres && owner.adres.gemeente
         ),
         owner.email,
         owner.noodnummer,

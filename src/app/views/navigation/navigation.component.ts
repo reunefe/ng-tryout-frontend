@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NagivationService } from '../../services/nagivation.service';
+import { MdDialog } from '@angular/material';
+
+import { NavigationService } from '../../services/navigation.service';
 import { Tab } from '../../models/tab.model';
 
 @Component({
@@ -11,11 +13,23 @@ import { Tab } from '../../models/tab.model';
 export class NavigationComponent implements OnInit {
   tabs: Tab[];
 
-  constructor(private navigationService: NagivationService, private router: Router) {
+  constructor(private navigationService: NavigationService, private router: Router, private dialog: MdDialog) {
   }
 
   ngOnInit() {
     this.navigationService.getTabs()
       .subscribe(data => this.tabs = data);
+  }
+
+  createNew() {
+    var activeTab: Tab = this.tabs.find(tab => this.router.isActive(tab.path, false));
+
+    if (activeTab && activeTab.creationComponent) {
+      let comp = this.dialog.open(activeTab.creationComponent);
+      comp.afterClosed().subscribe(() => {
+        debugger
+        this.router.navigateByUrl(activeTab.path);
+      });
+    }
   }
 }

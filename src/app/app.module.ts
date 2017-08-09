@@ -15,12 +15,15 @@ import { NavigationComponent } from './views/navigation/navigation.component';
 import { CatTileComponent } from './views/cats/cat-tile/cat-tile.component';
 import { CatOverviewComponent } from './views/cats/cat-overview/cat-overview.component';
 
-import { NagivationService } from './services/nagivation.service';
+import { NavigationService } from './services/navigation.service';
 import { CatService } from './services/cat.service';
 import { OwnerOverviewComponent } from './views/owners/owner-overview/owner-overview.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { OwnerService } from './services/owner.service';
 import { OwnerTileComponent } from './views/owners/owner-tile/owner-tile.component';
+import { OwnerRegistrationComponent } from './views/owners/owner-registration/owner-registration.component';
+import { OwnerInfoComponent } from './views/owners/owner-info/owner-info.component';
+import { BaseDialogComponent } from './views/base-dialog/base-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { OwnerTileComponent } from './views/owners/owner-tile/owner-tile.compone
     NavigationComponent,
     OwnerOverviewComponent,
     PageNotFoundComponent,
-    OwnerTileComponent
+    OwnerTileComponent,
+    OwnerRegistrationComponent,
+    OwnerInfoComponent,
+    BaseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,8 @@ import { OwnerTileComponent } from './views/owners/owner-tile/owner-tile.compone
     RouterModule.forRoot(appRoutes),
     MaterialModule
   ],
-  providers: [NagivationService, CatService, OwnerService],
+  entryComponents: [OwnerRegistrationComponent],
+  providers: [NavigationService, CatService, OwnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
