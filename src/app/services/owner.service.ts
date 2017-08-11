@@ -36,7 +36,7 @@ export class OwnerService {
   }
 
   createOwner(owner: any): Observable<Owner> {
-    let headers = new Headers({'enctype': 'application/json'});
+    let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     return this.http.post(BASE_URI, owner, options).map(res => res.json())
       .map(res => res.data)

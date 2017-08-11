@@ -33,7 +33,7 @@ export class OwnerRegistrationComponent implements OnInit {
     if (this.uploader.queue.length > 0) {
       this.registerWithAvatar();
     } else {
-      this.ownerService.createOwner(this.ownerInfo.getOwner()).subscribe();
+      this.ownerService.createOwner(this.ownerInfo.getOwner()).subscribe(data => this.registrationSuccess());
     }
   }
 
@@ -52,11 +52,8 @@ export class OwnerRegistrationComponent implements OnInit {
       this.progress = progress;
     };
 
-    this.uploader.onSuccessItem = (fileItem, response): any => {
-      this.progress = 100;
-      this.ownerInfo.form.reset();
-      this.dialog.closeDialog();
-      this.ownerService.getOwners();
+    this.uploader.onSuccessItem = (fileItem, progress): any => {
+      this.registrationSuccess();
     };
 
     this.uploader.onErrorItem = (fileItem, response): any => {
@@ -70,6 +67,13 @@ export class OwnerRegistrationComponent implements OnInit {
     };
 
     this.uploader.uploadAll();
+  }
+
+  registrationSuccess() {
+    this.progress = 100;
+    this.ownerInfo.form.reset();
+    this.dialog.closeDialog();
+    this.ownerService.getOwners();
   }
 
   buildFormItem(owner, form): any {
