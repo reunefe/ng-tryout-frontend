@@ -7,6 +7,7 @@ import {
   MdIconModule,
   MdInputModule,
   MdMenuModule,
+  MdProgressBarModule,
   MdProgressSpinnerModule,
   MdTabsModule,
   MdToolbarModule
@@ -23,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MdIconModule,
     MdInputModule,
     MdMenuModule,
+    MdProgressBarModule,
     MdProgressSpinnerModule,
     MdTabsModule,
     MdToolbarModule
@@ -35,6 +37,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MdIconModule,
     MdInputModule,
     MdMenuModule,
+    MdProgressBarModule,
     MdProgressSpinnerModule,
     MdTabsModule,
     MdToolbarModule

@@ -1,0 +1,4 @@
+<div class="placeholder" (click)="selectImg()">
+  <img [src]="preview" *ngIf="preview"/>
+</div>
+<input #fileInput type="file" ng2FileSelect [uploader]="uploader"/>

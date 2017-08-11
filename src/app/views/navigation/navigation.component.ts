@@ -25,10 +25,8 @@ export class NavigationComponent implements OnInit {
     var activeTab: Tab = this.tabs.find(tab => this.router.isActive(tab.path, false));
 
     if (activeTab && activeTab.creationComponent) {
-      let comp = this.dialog.open(activeTab.creationComponent);
-      comp.afterClosed().subscribe(() => {
-        debugger
-        this.router.navigateByUrl(activeTab.path);
+      let comp = this.dialog.open(activeTab.creationComponent, {
+        width: '80%'
       });
     }
   }

@@ -1,75 +1,78 @@
-<form [formGroup]="form" fxLayout="column" fxLayoutGap="10px">
-  <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="First name"
-             formControlName="firstName">
-      <md-error *ngIf="form.get('firstName').hasError('minlength')">
-        Minimum 2 characters
-      </md-error>
-      <md-error *ngIf="form.get('firstName').hasError('required')">
-        First name is <strong>required</strong>
-      </md-error>
-    </md-input-container>
+<div fxLayout="row" fxLayoutGap="10px">
+  <app-image-preview [uploader]="uploader"></app-image-preview>
+  <form [formGroup]="form" fxLayout="column" fxLayoutGap="10px" fxFlexFill>
+    <div fxLayout="row" fxLayout.sm="column" fxLayoutGap="10px">
+      <md-input-container fxFlex>
+        <input mdInput placeholder="First name" [required]="true"
+               formControlName="firstName">
+        <md-error *ngIf="form.get('firstName').hasError('minlength')">
+          Minimum 2 characters
+        </md-error>
+        <md-error *ngIf="form.get('firstName').hasError('required')">
+          First name is <strong>required</strong>
+        </md-error>
+      </md-input-container>
 
-    <md-input-container fxFlex>
-      <input mdInput placeholder="Last name"
-             formControlName="lastName">
-      <md-error *ngIf="form.get('lastName').hasError('minlength')">
-        Minimum 3 characters
-      </md-error>
-      <md-error *ngIf="form.get('lastName').hasError('required')">
-        Last name is <strong>required</strong>
-      </md-error>
-    </md-input-container>
-  </div>
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Last name" [required]="true"
+               formControlName="lastName">
+        <md-error *ngIf="form.get('lastName').hasError('minlength')">
+          Minimum 3 characters
+        </md-error>
+        <md-error *ngIf="form.get('lastName').hasError('required')">
+          Last name is <strong>required</strong>
+        </md-error>
+      </md-input-container>
+    </div>
 
-  <md-input-container fxFlexFill fxLayoutGap="10px">
-    <input mdInput placeholder="Email"
-           formControlName="email">
-    <md-error *ngIf="form.get('email').hasError('required')">
-      Email is <strong>required</strong>
-    </md-error>
-  </md-input-container>
-
-  <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="Address"
-             formControlName="street">
-    </md-input-container>
-
-    <md-input-container fxFlex>
-      <input mdInput placeholder="House number"
-             formControlName="houseNr">
-    </md-input-container>
-  </div>
-
-  <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="Zip code"
-             formControlName="zipCode">
-    </md-input-container>
-
-    <md-input-container fxFlex>
-      <input mdInput placeholder="City"
-             formControlName="city">
-    </md-input-container>
-  </div>
-
-  <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="Phone number"
-             formControlName="phoneNr">
-      <md-error *ngIf="form.get('phoneNr').hasError('minlength')">
-        Minimum 9 characters
-      </md-error>
-      <md-error *ngIf="form.get('phoneNr').hasError('required')">
-        Phone number is <strong>required</strong>
+    <md-input-container fxFlexFill fxLayoutGap="10px">
+      <input mdInput placeholder="Email" [required]="true"
+             formControlName="email">
+      <md-error *ngIf="form.get('email').hasError('required')">
+        Email is <strong>required</strong>
       </md-error>
     </md-input-container>
 
-    <md-input-container fxFlex>
-      <input mdInput placeholder="Emergency number"
-             formControlName="emergencyNr">
-    </md-input-container>
-  </div>
-</form>
+    <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Address"
+               formControlName="street">
+      </md-input-container>
+
+      <md-input-container fxFlex>
+        <input mdInput placeholder="House number"
+               formControlName="houseNr">
+      </md-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Zip code"
+               formControlName="zipCode">
+      </md-input-container>
+
+      <md-input-container fxFlex>
+        <input mdInput placeholder="City"
+               formControlName="city">
+      </md-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayout.sm="column" fxFlexFill fxLayoutGap="10px">
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Phone number" [required]="true"
+               formControlName="phoneNr">
+        <md-error *ngIf="form.get('phoneNr').hasError('minlength')">
+          Minimum 9 characters
+        </md-error>
+        <md-error *ngIf="form.get('phoneNr').hasError('required')">
+          Phone number is <strong>required</strong>
+        </md-error>
+      </md-input-container>
+
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Emergency number"
+               formControlName="emergencyNr">
+      </md-input-container>
+    </div>
+  </form>
+</div>

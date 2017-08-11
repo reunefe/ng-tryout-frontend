@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
+import { FileSelectDirective } from 'ng2-file-upload';
 import { MaterialModule } from './material/material.module';
 import { appRoutes } from './app.routes';
 
@@ -24,10 +25,12 @@ import { OwnerTileComponent } from './views/owners/owner-tile/owner-tile.compone
 import { OwnerRegistrationComponent } from './views/owners/owner-registration/owner-registration.component';
 import { OwnerInfoComponent } from './views/owners/owner-info/owner-info.component';
 import { BaseDialogComponent } from './views/base-dialog/base-dialog.component';
+import { ImagePreviewComponent } from './views/image-preview/image-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FileSelectDirective,
     CatTileComponent,
     CatOverviewComponent,
     NavigationComponent,
@@ -36,7 +39,8 @@ import { BaseDialogComponent } from './views/base-dialog/base-dialog.component';
     OwnerTileComponent,
     OwnerRegistrationComponent,
     OwnerInfoComponent,
-    BaseDialogComponent
+    BaseDialogComponent,
+    ImagePreviewComponent
   ],
   imports: [
     BrowserModule,

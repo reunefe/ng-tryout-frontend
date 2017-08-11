@@ -1,5 +1,5 @@
-<app-base-dialog [title]="'Register new owner'">
-  <app-owner-info #ownerInfo class="dialog-content"></app-owner-info>
+<app-base-dialog #dialog [title]="'Register new owner'" [progress]="progress" [error]="error">
+  <app-owner-info #ownerInfo class="dialog-content" [uploader]="uploader"></app-owner-info>
   <div class="dialog-footer">
     <button md-button (click)="registerOwner()" [disabled]="ownerInfo.form.invalid">Register</button>
   </div>

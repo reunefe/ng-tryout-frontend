@@ -15,16 +15,17 @@ export class OwnerOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ownerService.owners
+      .subscribe(data => {
+        this.loading = false;
+        this.ownerList = data;
+      });
     this.getOwners();
   }
 
   getOwners(): void {
     this.loading = !this.ownerList || this.ownerList.length === 0;
-    this.ownerService.getOwners()
-      .subscribe(data => {
-        this.loading = false;
-        this.ownerList = data;
-      });
+    this.ownerService.getOwners();
   }
 
 }

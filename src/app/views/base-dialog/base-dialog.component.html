@@ -1,6 +1,6 @@
 <md-toolbar color="primary" md-dialog-title>
   <h2 fxFlex>{{title}}</h2>
-  <button md-icon-button md-dialog-close>
+  <button #closeButton md-icon-button md-dialog-close>
     <md-icon>close</md-icon>
   </button>
 </md-toolbar>
@@ -9,8 +9,9 @@
   <ng-content select=".dialog-content"></ng-content>
 </div>
 
-<md-dialog-actions fxLayout="row" fxLayoutAlign="end center">
-  <span *ngIf="showError" class="error" fxFlex>{{error}}</span>
+<md-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+  <md-error *ngIf="error" fxFlex>{{error}}</md-error>
+  <md-progress-bar *ngIf="progress > 0" mode="determinate" [value]="progress" fxFlex></md-progress-bar>
   <button md-button md-dialog-close>Cancel</button>
   <ng-content select=".dialog-footer"></ng-content>
 </md-dialog-actions>

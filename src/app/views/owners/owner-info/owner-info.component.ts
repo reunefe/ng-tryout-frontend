@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Owner } from '../../../models/owner.model';
 import { Address } from '../../../models/address.model';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-owner-info',
@@ -12,6 +13,7 @@ import { Address } from '../../../models/address.model';
 export class OwnerInfoComponent implements OnInit {
   form: FormGroup;
   @Input() owner: Owner;
+  @Input() uploader: FileUploader;
 
   constructor() {
   }
