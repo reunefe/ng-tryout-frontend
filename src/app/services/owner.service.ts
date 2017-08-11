@@ -53,19 +53,19 @@ export class OwnerService {
   parseOwners(data: any[]): Owner[] {
     return data.map(owner => {
       return new Owner(
-        owner.voornaam || owner.firstName,
-        owner.familienaam || owner.lastName,
-        owner.telefoonnummer || owner.phoneNr,
+        owner.voornaam,
+        owner.familienaam,
+        owner.telefoonnummer,
         owner._id,
         new Address(
-          (owner.adres && owner.adres.straat) || (owner.address && owner.address.street),
-          (owner.adres && owner.adres.nummer) || (owner.address && owner.address.houseNr),
-          (owner.adres && owner.adres.postcode) || (owner.address && owner.address.zipCode),
-          (owner.adres && owner.adres.gemeente || (owner.address && owner.address.city))
+          owner.adres && owner.adres.straat,
+          owner.adres && owner.adres.nummer,
+          owner.adres && owner.adres.postcode,
+          owner.adres && owner.adres.gemeente
         ),
         owner.email,
-        owner.noodnummer || owner.emergencyNr,
-        owner.foto || owner.picture
+        owner.noodnummer,
+        owner.foto
       );
     });
   }

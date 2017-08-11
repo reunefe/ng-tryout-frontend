@@ -78,16 +78,47 @@ export class OwnerRegistrationComponent implements OnInit {
   buildFormItem(owner, form): any {
     Object.keys(owner).forEach((key: string) => {
       let value = owner[key];
+      let property: string = this.getPropertyForKey(key);
       if (value !== null && value !== undefined) {
         if (value instanceof Address) {
           Object.keys(value).forEach((addressKey: string) => {
-            form.append(`${key}[${addressKey}]`, value[addressKey]);
+            form.append(`${property}[${property}]`, value[addressKey]);
           });
         } else {
-          form.append(key, value);
+          form.append(property, value);
         }
       }
     });
     return form;
+  }
+
+  getPropertyForKey(key: string): string {
+    switch (key) {
+      case 'firstName':
+        return 'voornaam';
+      case 'lastName':
+        return 'familienaam';
+      case 'address':
+        return 'adres';
+
+      case 'street':
+        return 'straat';
+      case 'houseNr':
+        return 'nummer';
+      case 'zipCode':
+        return 'postcode';
+      case 'city':
+        return 'gemeente';
+
+      case 'phoneNr':
+        return 'telefoonnummer';
+      case 'emergencyNr':
+        return 'noodnummer';
+      case 'picture':
+        return 'foto';
+
+      default:
+        return '';
+    }
   }
 }
