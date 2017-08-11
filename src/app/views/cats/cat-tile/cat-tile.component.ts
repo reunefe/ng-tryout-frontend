@@ -22,7 +22,7 @@ export class CatTileComponent implements OnInit {
     if(this.cat.picture){
       this.catPicture = this.sanitizer.bypassSecurityTrustUrl(this.cat.picture);
     } else {
-      this.catPicture = '../../../assets/NoPicture.png';
+      this.catPicture = '/assets/NoPicture.png';
     }
   }
 

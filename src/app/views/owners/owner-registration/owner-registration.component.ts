@@ -30,11 +30,10 @@ export class OwnerRegistrationComponent implements OnInit {
     this.progress = 0;
     this.error = undefined;
 
-    if (this.uploader.queue.length > 0) {
-      this.registerWithAvatar();
-    } else {
-      this.ownerService.createOwner(this.ownerInfo.getOwner()).subscribe(data => this.registrationSuccess());
+    if (this.uploader.queue.length === 0) {
+      this.uploader.addToQueue([new File([''], '')]);
     }
+    this.registerWithAvatar();
   }
 
   registerWithAvatar() {

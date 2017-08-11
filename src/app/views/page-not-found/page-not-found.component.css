@@ -1,6 +1,6 @@
 div {
   min-height: calc(100vh - 64px);
-  background-image: url('../../../assets/PageNotFound.jpg');
+  background-image: url('/assets/PageNotFound.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
