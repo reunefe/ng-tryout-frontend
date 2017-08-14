@@ -3,7 +3,8 @@
     <a md-tab-link
        *ngFor="let link of tabs"
        routerLinkActive="active"
-       [routerLink]="link.path">
+       [routerLink]="link.path"
+       (click)="onNavigate(link.path)">
       {{link.label}}
     </a>
   </nav>

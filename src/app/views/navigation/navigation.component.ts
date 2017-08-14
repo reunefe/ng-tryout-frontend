@@ -21,6 +21,11 @@ export class NavigationComponent implements OnInit {
       .subscribe(data => this.tabs = data);
   }
 
+  onNavigate(path) {
+    this.router.navigate(['/'], {skipLocationChange: true})
+      .then(() => this.router.navigate([path]));
+  }
+
   createNew() {
     var activeTab: Tab = this.tabs.find(tab => this.router.isActive(tab.path, false));
 
